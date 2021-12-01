@@ -56,12 +56,7 @@ btnsubmit.addEventListener("click", ()=>{
     {
     elemdiv.textContent=inputsbm.value; 
     elemdiv.append(elemdiv);
-    elemdiv.append(prgf);
-    pp.append(lbl);
-    pp.append(chckbox);
-    pp.append(confirmedbox);
-    pp.append(btnedit);
-    pp.append(btnremove);
+   
            
     inputsbm.value="";
     }
