@@ -8,6 +8,10 @@ let lbl=document.getElementById('cflabel');
 let confirmedbox=document.getElementById('cf');
 let btnedit=document.getElementById('btnedit');
 let btnremove=document.getElementById('btnremove');
+let inputsbm=document.querySelector(".inputsb");
+
+//addaugare persoana -> butonul submit
+let btnsubmit=document.querySelector('btnsbmt')
 
 
 let flag=1;
@@ -37,5 +41,31 @@ chckbox.addEventListener("change", ()=>{
             flag=0;
         }
      
+})
+
+
+
+btnsubmit.addEventListener("click", ()=>{
+
+    let elemdiv=document.createElement("div");
+    
+    elemparagraf="Confirmed";
+    
+
+    if(inputsbm.value!=="")
+    {
+    elemdiv.textContent=inputsbm.value; 
+    elemdiv.append(elemdiv);
+    elemdiv.append(prgf);
+    pp.append(lbl);
+    pp.append(chckbox);
+    pp.append(confirmedbox);
+    pp.append(btnedit);
+    pp.append(btnremove);
+           
+    inputsbm.value="";
+    }
+
+
 })
 
