@@ -29,23 +29,33 @@ footer{
     width:35%;
     border: 1px solid orange;
     flex-direction: column;
+    /*display:flex;*/
 }
 
 .inputsb{
     width:80%;
-    height:25px;
+    height:35px;
+    box-shadow: grey;
+    border-radius: 5px;
    
 }
-#btnsbmt{
-    width:60px;
-    height:30px;
+.btnsbmt{
+    width:80px;
+    height:35px;
+    background-color: rgb(19, 105, 105);
+    color:white;
+    margin:0;
+    font-size: 17px;
 
 }
 
-.sbmt{
+div.sbmt{
     margin:auto;
     margin-top:-15px;
-    width:30%;
+    width:40%;
+    /*display:inline-block;*/
+    border: 2px solid white;
+    border-bottom: 3px;
 }
 
 .inv{
@@ -55,10 +65,28 @@ footer{
     float: right;
     
 }
-input#generalcf{
+input.generalcf{
     margin-top:23px;
 }
 
 h2{
     float:left;
+}
+
+.btnedit{
+    color:white;
+    background-color: rgb(7, 108, 126);
+    font-size: 14px;
+    border-radius: 3px;
+    width:40px;
+
+}
+
+.btnremove{
+    color:white;
+    background-color: rgb(87, 155, 187);
+    font-size: 14px;
+    border-radius: 3px;
+    width:60px;
+
 }
