@@ -47,7 +47,7 @@ chckbox.addEventListener("change", ()=>{
 
 btnsubmit.addEventListener("click", ()=>{
 
-    let elemdiv=document.createElement("p");
+    let elemdiv=document.createElement("div");
 
     if(inputsbm.value!=="")
     {
@@ -57,13 +57,14 @@ btnsubmit.addEventListener("click", ()=>{
     attachbuttons(elemdiv);
 
     textfrombox.append(elemdiv);
-    
+    inputsbm.value="";
    
     }
-    newitem.value="";
+    
 
 
 })
+
 
 function attachbuttons(bts){
 
@@ -88,6 +89,19 @@ function attachbuttons(bts){
     btn2.textContent="remove";
     bts.appendChild(btn2);
 }
+
+textfrombox.addEventListener("click",(d)=>{
+
+    let obj=d.target;
+    if(obj.classList.contains("btnremove")){
+        let card=obj.parentNode;
+        textfrombox.removeChild(card);
+    }
+
+})
+
+
+
     
 
 
