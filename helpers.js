@@ -1,34 +1,33 @@
-
-
 function createCard(numele){
 
     // declaram div-ul pp 
     let div1=document.createElement('div');
-    div1.classList.add(".pp");
+    div1.classList.add("pp");
   
 
     //declaram elementele care apartin div-ului .pp;
     let paragraf1=document.createElement("p");
-    paragraf1.classList.add(".paragraf");
+    paragraf1.classList.add("paragraf");
     //textul din paragraf este acelasi cu valoarea din functie;
     paragraf1.textContent=numele;
    
     let label1=document.createElement("label");
-    label1.classList.add(".cflabel");
+    label1.classList.add("cflabel");
     label1.textContent="Confirmed";
     
 
     let input1=document.createElement("input");
-    input1.classList.add(".cf");
+    input1.classList.add("cf");
+    input1.type="checkbox";
   
 
     let btnedit1=document.createElement("button");
-    btnedit1.classList.add(".btnedit");
+    btnedit1.classList.add("btnedit");
     btnedit1.textContent="edit";
     
 
     let btnremove1=document.createElement("button");
-    btnremove1.classList.add(".btnremove");
+    btnremove1.classList.add("btnremove");
     btnremove1.textContent="remove";
     
 
@@ -43,4 +42,38 @@ function createCard(numele){
     return div1;
 
 }
+
+
+
+
+
+///functie ce o apelam cand este apasat butonul de confirmare pt persoana respectiva;
+function checkedConfirmed(){
+
+let allcards=document.querySelector(".container").children; //salvez fiecare card din container
+
+    for(let i=0;i<allcards.length;i++){
+        let obj=allcards[i].querySelector(".cf");
+        if(obj.checked==false){
+        allcards[i].style.display="none";
+        }
+        
+    }
+}
+
+function unCheckedConfirmed(){
+    let allcards=document.querySelector(".container").children; 
+
+
+    for (let i=0;i<allcards.length;i++){
+
+        
+            allcards[i].style.display="block";
+    }
+
+}
+
+
+
+
 
