@@ -16,28 +16,15 @@ let btnsubmit=document.querySelector(".btnsbmt");
 
 let flag=1;
 
-chckbox.addEventListener("change", ()=>{
-
-    
-    
+chckbox.addEventListener("click", ()=>{
+        
         if(flag==0 && confirmedbox.checked==true){
             textfrombox.style.display = "block";
-            /*prgf[i].style.display = "block";
-            lbl[i].style.display = "block";
-            confirmedbox[i].style.display = "block";
-            btnedit[i].style.display = "block";
-            btnremove[i].style.display = "block";*/
-
             flag=1;
         } 
             
         else {
             textfrombox.style.display = "none";
-           /*prgf[i].style.display = "none";
-            lbl[i].style.display = "none";
-            confirmedbox[i].style.display = "none";
-            btnedit[i].style.display = "none";
-            btnremove[i].style.display = "none";*/
             flag=0;
         }
      
