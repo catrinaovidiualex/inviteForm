@@ -39,12 +39,12 @@ confirmationInv.addEventListener('click',(e)=>{
 deletecard.addEventListener('click',(e)=>{
 
     let allcards=document.querySelector(".container").children; 
-    let objRemove=e.target;
+    allcards=e.target;
 
     for (let i=0;i<allcards.length;i++){
    
-        if(objRemove.classList.contains("btnremove")){
-            let card=obj.parentNode;
+        if(allcards[i].classList.contains("btnremove")){
+            let card=allcards[i].parentNode;
             deletecard.removeChild(card);
      }
     }

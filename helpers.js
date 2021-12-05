@@ -10,6 +10,10 @@ function createCard(numele){
     paragraf1.classList.add("paragraf");
     //textul din paragraf este acelasi cu valoarea din functie;
     paragraf1.textContent=numele;
+
+
+    let divc1=document.createElement('div');
+    divc1.classList.add("c1");
    
     let label1=document.createElement("label");
     label1.classList.add("cflabel");
@@ -20,6 +24,10 @@ function createCard(numele){
     input1.classList.add("cf");
     input1.type="checkbox";
   
+
+    let divc2=document.createElement('div');
+    divc2.classList.add("c2");
+
 
     let btnedit1=document.createElement("button");
     btnedit1.classList.add("btnedit");
@@ -33,10 +41,16 @@ function createCard(numele){
 
     /// legam elementele de div-ul .pp;
     div1.appendChild(paragraf1);
-    div1.appendChild(label1);
-    div1.appendChild(input1);
-    div1.appendChild(btnedit1);
-    div1.appendChild(btnremove1);
+
+    // label si input sunt copii pt div c1;
+    divc1.appendChild(label1);
+    divc1.appendChild(input1);
+    div1.appendChild(divc1);
+
+    //butoanele sunt copii pt div c2;
+    divc2.appendChild(btnedit1);
+    divc2.appendChild(btnremove1);
+    div1.appendChild(divc2);
 
     //afisam div-ul nou creat;
     return div1;
