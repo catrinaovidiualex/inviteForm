@@ -89,5 +89,77 @@ function unCheckedConfirmed(){
 
 
 
+//obj este butonul de remove
+let  pressRemove=(obj)=>{
+
+    let card=obj.parentNode.parentNode;
+    
+    //console.log(card);
+
+    let mainContainer=document.querySelector(".container");
+
+    mainContainer.removeChild(card);
+
+    
+
+}
+
+let handle=(e)=>{
+    let obj=e.target;
+         if(obj.classList.contains("btnremove")){
+             
+               pressRemove(obj);
+
+         }else if(obj.classList.contains("btnedit")){
 
 
+                pressEdit(obj);
+         }
+}
+
+
+let pressEdit=(obj)=>{
+    let card=obj.parentNode.parentNode;
+
+    let p=card.querySelector(".paragraf");
+    //cream un input 
+    //inauntru lui punem valoarea din paragraf
+    //apoi stergem paragrafu
+    let newinput=document.createElement('input');
+    
+
+          
+    newinput.value=p.textContent;
+
+
+    card.insertBefore(newinput,p);
+    
+    
+    card.removeChild(p);
+
+
+    let edit=card.querySelector(".btnedit");
+
+
+    edit.classList.add("save");
+
+    edit.classList.remove("btnedit");
+
+    edit.textContent="save";
+   
+
+
+}
+
+
+let pressSave=(obj)=>{
+
+    let card=obj.parentNode.parentNode;
+    let newinput1=document.querySelector(".paragraf");
+    newinput1.type='p';
+
+    let edit1=card.querySelector(".btnedit");
+    edit1.classList.remove("save");
+    edit1.textContent="edit";
+    
+}

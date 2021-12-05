@@ -6,6 +6,7 @@ let unconfirmedInv=document.querySelector(".generalcf");
 let deletecard=document.querySelector(".btnremove");
 
 
+
 btnSubmit.addEventListener('click',()=>{
 
     let card=createCard(inputValue.value);
@@ -36,19 +37,11 @@ confirmationInv.addEventListener('click',(e)=>{
 
 })
 
-deletecard.addEventListener('click',(e)=>{
+mainContainer.addEventListener('click', handle);
 
-    let allcards=document.querySelector(".container").children; 
-    allcards=e.target;
 
-    for (let i=0;i<allcards.length;i++){
-   
-        if(allcards[i].classList.contains("btnremove")){
-            let card=allcards[i].parentNode;
-            deletecard.removeChild(card);
-     }
-    }
-})
+
+
 
 
 
