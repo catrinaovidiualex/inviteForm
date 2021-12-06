@@ -115,6 +115,9 @@ let handle=(e)=>{
 
                 pressEdit(obj);
          }
+         else if (obj.classList.contains("save")){
+             pressSave(obj);
+         }
 }
 
 
@@ -154,12 +157,24 @@ let pressEdit=(obj)=>{
 
 let pressSave=(obj)=>{
 
-    let card=obj.parentNode.parentNode;
-    let newinput1=document.querySelector(".paragraf");
-    newinput1.type='p';
+    
+        let btnSave=obj.target; 
 
-    let edit1=card.querySelector(".btnedit");
-    edit1.classList.remove("save");
-    edit1.textContent="edit";
+        if(btnSave.textContent==="save"){
+            let newinputSave=document.createElement('input');//cream inputul pt butonul save;
+            newinputSave=divpp.firstElementChild;//input creat este acum copilul lui div .pp
+            let paragrafAfterSave=document.createElement('p');//facem elementul paragraf care va contine valoarea nou modificata                       
+            paragragrafAfterSave.textContent=newinputSave.value; // valoarea paragrfului este textul final (dupa modificarea  lui);
+            divpp.insertBefore(paragrafAfterSave,newinputSave);
+            divpp.removeChild(newinputSave);
+            btnSave.textContent='edit';
+
+
+
+        }
+
+
+
+    
     
 }
