@@ -129,7 +129,7 @@ let pressEdit=(obj)=>{
     //inauntru lui punem valoarea din paragraf
     //apoi stergem paragrafu
     let newinput=document.createElement('input');
-    
+    newinput.classList.add("saveInput");
 
           
     newinput.value=p.textContent;
@@ -157,24 +157,25 @@ let pressEdit=(obj)=>{
 
 let pressSave=(obj)=>{
 
+    let card=obj.parentNode.parentNode;
+
+    let savedinput=card.querySelector(".saveInput");
+    let newsavedparagraf=document.createElement('p');
+    newsavedparagraf.classList.add("paragraf");
     
-        let btnSave=obj.target; 
-
-        if(btnSave.textContent==="save"){
-            let newinputSave=document.createElement('input');//cream inputul pt butonul save;
-            newinputSave=divpp.firstElementChild;//input creat este acum copilul lui div .pp
-            let paragrafAfterSave=document.createElement('p');//facem elementul paragraf care va contine valoarea nou modificata                       
-            paragragrafAfterSave.textContent=newinputSave.value; // valoarea paragrfului este textul final (dupa modificarea  lui);
-            divpp.insertBefore(paragrafAfterSave,newinputSave);
-            divpp.removeChild(newinputSave);
-            btnSave.textContent='edit';
-
-
-
-        }
-
-
-
+    //cream un paragraf 
+    //inauntru lui punem valoarea din input
+    //apoi stergem inputul
+          
+    newsavedparagraf.textContent=savedinput.value;
+    
+    let save=card.querySelector(".save");
+    save.classList.add("btnedit");
+    save.classList.remove("save");
+    card.insertBefore(newsavedparagraf,savedinput);
+    card.removeChild(savedinput);
+    save.textContent="edit";
+       
     
     
 }
